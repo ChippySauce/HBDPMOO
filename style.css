@@ -1,0 +1,153 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4);
+    color: #333;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 40px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    color: #ff1493;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+#surpriseMessage {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ff69b4;
+    font-weight: bold;
+    font-style: italic;
+    display: none;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(-100px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.confetti div {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    animation: confettiFall 3s infinite ease-in-out;
+}
+
+.confetti div:nth-child(odd) {
+    background-color: #ff1493;
+}
+
+.confetti div:nth-child(even) {
+    background-color: #ff77ff;
+}
+
+#surpriseMessage, #pop-up-message {
+    display: none;
+}
+
+/* Pop-up Box Styling */
+.pop-up-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    z-index: 100;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.pop-up-box h2 {
+    font-size: 22px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.pop-up-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.pop-up-box button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+.pop-up-box button:hover {
+    background-color: #ff1493;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+.pop-up-box button {
+    margin: 20px 40px;
+}
+
+
+button#main-button {
+    transition: font-size 0.3s ease-in-out;
+}
+
+button#main-button.grow {
+    font-size: 24px;
+}
